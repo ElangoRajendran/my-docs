@@ -35,5 +35,4 @@ jobs:
       - run: echo $pwd
         working-directory: ${{env.working-directory}}
 
-      - run: PowerShell -ExecutionPolicy ByPass 'build.ps1' -target build
       - run: ls
