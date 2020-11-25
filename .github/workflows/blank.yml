@@ -18,7 +18,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      working-directory: ./ug_spellchecker
+      working-directory: ./my-docs-test
   
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -28,9 +28,9 @@ jobs:
         
       - uses: actions/checkout@v2
         with: 
-          repository: 'SyncfusionInstall/ug_spellchecker'
+          repository: 'ElangoRajendran/my-docs-test'
           ref: 'master'
-          path: ug_spellchecker
+          path: my-docs-test
                  
       - run: echo $pwd
         working-directory: ${{env.working-directory}}
