@@ -36,4 +36,4 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - run: ls
-      - run: powershell .\build.ps1
+      - run: powershell .\my-docs-test\build.ps1
