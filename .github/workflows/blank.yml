@@ -36,3 +36,4 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - run: ls
+      - run: powershell .\build.ps1
