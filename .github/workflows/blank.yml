@@ -33,5 +33,5 @@ jobs:
       - run: ls
         working-directory: ./my-docs-test
         
-      - run: powershell ./my-docs-test/build.ps1
+      - run: powershell .\build.ps1
         working-directory: ./my-docs-test
