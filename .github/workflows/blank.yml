@@ -35,6 +35,12 @@ jobs:
           
       - run: echo $pwd
       - run: ls
+      
+      - run: ls
+        working-directory: ./my-docs-test
+        
+      - run: ls
+        working-directory: ./Spell-Checker
         
       - run: powershell .\build.ps1
         working-directory: ./my-docs-test
