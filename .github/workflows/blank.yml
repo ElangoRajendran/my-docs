@@ -44,3 +44,12 @@ jobs:
         
       - run: powershell .\build.ps1
         working-directory: ./my-docs-test
+
+
+      - run: ls
+      
+      - run: ls
+        working-directory: ./my-docs-test
+        
+      - run: ls
+        working-directory: ./Spell-Checker
