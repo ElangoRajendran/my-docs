@@ -31,4 +31,5 @@ jobs:
                  
       - run: echo $pwd
       - run: ls
-      - run: powershell .\my-docs\my-docs-test\build.ps1
+        working-directory: ./my-docs-test
+      - run: powershell ./my-docs-test/build.ps1
