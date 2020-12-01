@@ -28,7 +28,9 @@ jobs:
           repository: 'ElangoRajendran/my-docs-test'
           ref: 'master'
           path: my-docs-test
-                 
+          working-directory: D:\a\my-docs
+          
+          
       - run: echo $pwd
       - run: ls
         working-directory: ./my-docs-test
