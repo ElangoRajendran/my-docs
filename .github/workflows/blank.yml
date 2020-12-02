@@ -25,7 +25,7 @@ jobs:
         with: 
           repository: 'ElangoRajendran/my-docs-test'
           ref: 'master'
-          path: my-docs-test
+          path: ug_spellchecker
           
             
       - uses: actions/checkout@v2
@@ -37,19 +37,19 @@ jobs:
       - run: ls
       
       - run: ls
-        working-directory: ./my-docs-test
+        working-directory: ./ug_spellchecker
         
       - run: ls
         working-directory: ./Spell-Checker
         
       - run: powershell .\build.ps1
-        working-directory: ./my-docs-test
+        working-directory: ./ug_spellchecker
 
 
       - run: ls
       
       - run: ls
-        working-directory: ./my-docs-test
+        working-directory: ./ug_spellchecker
         
       - run: ls
         working-directory: ./Spell-Checker
