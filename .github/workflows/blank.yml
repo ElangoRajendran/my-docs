@@ -34,7 +34,6 @@ jobs:
 
           
       - run: echo $pwd
-      - run: echo process.env.GITHUB_REF
         
       - run: ls
       
