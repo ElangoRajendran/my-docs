@@ -44,7 +44,7 @@ jobs:
       - run: ls
         working-directory: ./Spell-Checker
       
-      - uses: 8BitJonny/gh-get-current-pr@v1
+      - uses: juliangruber/find-pull-request-action@v1
         id: PR
         with:
          github-token: ${{ secrets.GITHUB_TOKEN }}
