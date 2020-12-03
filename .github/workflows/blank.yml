@@ -42,20 +42,10 @@ jobs:
         
       - run: ls
         working-directory: ./Spell-Checker
-      
-      - uses: juliangruber/find-pull-request-action@v1
-        id: PR
-        with:
-         github-token: ${{ secrets.GITHUB_TOKEN }}
-         filterOutClosed: true       
-      - run: echo "Your PR is ${prNumber} and its JSON is ${prJSON}"
-        if: success() && steps.PR.outputs.number
-        env:
-         prNumber: ${{ steps.PR.outputs.number }}
-         prJSON: ${{ steps.PR.outputs.pr }}
         
-      - run: powershell .\build.ps1
-        working-directory: ./ug_spellchecker
+        
+        env:
+         PR_NUMBER: ${{ github.event.number }}
 
 
       - run: ls
