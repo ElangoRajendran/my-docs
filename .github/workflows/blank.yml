@@ -9,6 +9,7 @@ on:
     branches: [ '*' ]
   pull_request:
     branches: [ '*' ]
+    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,6 +43,16 @@ jobs:
         
       - run: ls
         working-directory: ./Spell-Checker
+      
+      - uses: jwalton/gh-find-current-pr@v1
+        id: findPr
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # This will echo "Your PR is 7", or be skipped if there is no current PR.
+      - run: echo "Your PR is ${PR}"
+        if: success() && steps.findPr.outputs.number
+        env:
+          PR: ${{ steps.findPr.outputs.pr }}
         
       - run: powershell .\build.ps1
         working-directory: ./ug_spellchecker
