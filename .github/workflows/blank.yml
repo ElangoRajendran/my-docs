@@ -41,17 +41,9 @@ jobs:
         working-directory: ./ug_spellchecker
         
       - run: ls
-        working-directory: ./Spell-Checker
-        
-        
+        working-directory: ./Spell-Checker        
         env:
          PR_NUMBER: ${{ github.event.number }}
 
-
-      - run: ls
-      
-      - run: ls
+      - run: powershell .\build.ps1
         working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
