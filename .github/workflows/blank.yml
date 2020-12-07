@@ -45,9 +45,11 @@ jobs:
         env:
          PR_NUMBER: ${{ github.event.number }}
          
-      - run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/${{ github.event.number }}/files| grep -w filename
-        env:
-         PR_NUMBER: ${{ github.event.number }}
+      - name: branchCommitDetails 
+        run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/${{ github.event.number }}/files| grep -w filename
+         
+      - run: echo branchCommitDetails
+        
 
       - run: powershell .\build.ps1
         working-directory: ./ug_spellchecker
