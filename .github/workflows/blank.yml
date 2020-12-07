@@ -31,7 +31,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: Spell-Checker     
-
+          
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: -X POST https://httpbin.org/post
           
       - run: echo $pwd
         
