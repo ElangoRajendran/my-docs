@@ -32,10 +32,7 @@ jobs:
         with:
           path: Spell-Checker     
           
-      - name: curl
-        uses: wei/curl@v1
-        with:
-          args: -X POST https://httpbin.org/post
+      - run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/1/files| grep -w filename
           
       - run: echo $pwd
         
