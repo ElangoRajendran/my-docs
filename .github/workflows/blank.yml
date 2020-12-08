@@ -47,7 +47,6 @@ jobs:
          
       - name: branchCommitDetails 
         run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/${{ github.event.number }}/files| grep -w filename
-             echo branchCommitDetails
         
 
       - run: powershell .\build.ps1
