@@ -31,19 +31,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: Spell-Checker     
-          
-          
-      - run: echo $pwd
-        
-      - run: ls
-      
-      - run: ls
-        working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker        
-        env:
-         PR_NUMBER: ${{ github.event.number }}
          
       - name: branchCommitDetails 
         run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/${{ github.event.number }}/files| grep -w filename
