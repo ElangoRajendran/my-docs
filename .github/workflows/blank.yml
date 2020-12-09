@@ -32,9 +32,7 @@ jobs:
         with:
           path: Spell-Checker     
          
-      - name: branchCommitDetails 
-        run: curl -X GET -u ElangoRajendran:6e8def9c9e437c576e9896d345059560e1932c2d https://api.github.com/repos/ElangoRajendran/my-docs/pulls/${{ github.event.number }}/files| grep -w filename -o output.txt
-        
-
-      - run: powershell .\build.ps1
-        working-directory: ./ug_spellchecker
+      - run: ls
+        working-directory: ./Spell-Checker        
+        env:
+         PR_NUMBER: ${{ github.event.number }}  ${{ github.event.schedule.user.login }}
