@@ -35,4 +35,5 @@ jobs:
       - run: ls
         working-directory: ./Spell-Checker        
         env:
-         PR_NUMBER: ${{ github.event.number }}  ${{ github.event.schedule.user.login }}
+         PR_NUMBER: ${{ github.event.number }}  
+         User_Name: ${{ github.event.schedule.user.login }}
