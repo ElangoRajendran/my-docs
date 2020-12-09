@@ -37,3 +37,7 @@ jobs:
         env:
          PR_NUMBER: ${{ github.event.number }}  
          Repo_Name: ${{ github.event.repository.name }}
+         API_Token: ${{ secrets.My-API-Token }}
+         GIT_USER: ${{ secrets.WEB_GITLAB_USER }}
+         GIT_TOKEN: ${{ secrets.WEB_GITLAB_TOKEN }}
+         GIT_MAIL: ${{ secrets.USER_MAIL }}
