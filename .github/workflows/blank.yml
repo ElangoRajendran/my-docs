@@ -20,35 +20,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with: 
-          repository: 'ElangoRajendran/my-docs-test'
-          ref: 'master'
-          path: ug_spellchecker          
-            
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it                      
       - uses: actions/checkout@v2
         with:
-          path: Spell-Checker     
+          fetch-depth: 2    
+          
+      - name: Get changed files
+        run: |
+          git diff --name-only HEAD^ HEAD
+           
         
           
-      - run: echo $pwd
-      - run: ls
       
-      - run: ls
-        working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
-        
-      - run: powershell .\build.ps1
-        working-directory: ./ug_spellchecker
-
-
-      - run: ls
-      
-      - run: ls
-        working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
