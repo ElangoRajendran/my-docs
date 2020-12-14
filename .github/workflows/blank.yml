@@ -36,6 +36,9 @@ jobs:
         run: |
           git diff --name-only HEAD^ HEAD > content.txt
         working-directory: ./Spell-Checker
+        
+      - run: cat content.txt
+        working-directory: ./Spell-Checker
            
       - run: ls
         
