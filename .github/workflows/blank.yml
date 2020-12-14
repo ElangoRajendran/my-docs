@@ -32,16 +32,14 @@ jobs:
           fetch-depth: 0
           path: Spell-Checker
           
-      - run: ls
-        
-      - run: ls
-        working-directory: ./Spell-Checker
-          
       - name: Get changed files
         run: |
-          git diff --name-only HEAD^ HEAD
+          git diff --name-only HEAD^ HEAD > content.txt
         working-directory: ./Spell-Checker
            
+      - run: ls
         
+      - run: ls
+        working-directory: ./Spell-Checker
           
       
