@@ -33,8 +33,7 @@ jobs:
           path: Spell-Checker     
           
       - name: Get changed files
-        run: |
-          git diff --name-only 
+        run: git diff --name-only 
         working-directory: ./Spell-Checker 
          
       - run: ls
