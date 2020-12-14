@@ -31,8 +31,8 @@ jobs:
         with:
           path: Spell-Checker     
           
-      - name: Get changed files
-        run: git diff --name-only
+#       - name: Get changed files
+#         run: git diff --name-only
          
       - name: Get changed files
         run: |
