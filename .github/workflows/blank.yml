@@ -4,13 +4,12 @@ name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
+    
 on:
-  push:
-    branches: [ '*' ]
   pull_request:
     branches: [ '*' ]
+    types: [opened, closed, edited, synchronize]
     
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,9 +32,12 @@ jobs:
           path: Spell-Checker     
           
       - name: Get changed files
-        run: git diff --name-only 
-        working-directory: ./Spell-Checker 
+        run: git diff --name-only
          
+      - name: Get changed files
+        run: |
+          git diff --name-only HEAD^ HEAD
+          
       - run: ls
         working-directory: ./Spell-Checker        
         env:
