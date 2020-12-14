@@ -27,11 +27,14 @@ jobs:
           path: Spell-Checker
           
       - run: ls
+        
+      - run: ls
+        working-directory: ./Spell-Checker
           
       - name: Get changed files
         run: |
           git diff --name-only HEAD^ HEAD
-          
+        working-directory: ./Spell-Checker
            
         
           
