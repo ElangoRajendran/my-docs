@@ -34,7 +34,7 @@ jobs:
           
       - name: Get changed files
         run: |
-          git diff --name-only --line-prefix=`git rev-parse --show-toplevel`/ HEAD release
+          path=git rev-parse --show-toplevel
         working-directory: ./Spell-Checker
         
       
