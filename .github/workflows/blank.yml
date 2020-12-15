@@ -35,6 +35,7 @@ jobs:
       - name: Get changed files
         run: |
           git rev-parse --show-toplevel
+          git diff --name-only HEAD^ HEAD
         working-directory: ./Spell-Checker
         
       
