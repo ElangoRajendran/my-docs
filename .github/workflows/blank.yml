@@ -34,7 +34,7 @@ jobs:
           
       - name: Get changed files
         run: |
-          git diff --name-only --line-prefix=D:/Githubproject/sfshared-xaml/
+          git diff --name-only HEAD^ HEAD --line-prefix=D:/Githubproject/sfshared-xaml/
         working-directory: ./Spell-Checker
         
       
