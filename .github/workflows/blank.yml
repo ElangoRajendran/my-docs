@@ -36,8 +36,8 @@ jobs:
           
       - name: Get changed files
         run: |
-          git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> content.txt
+          git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> ../cireports/content.txt
         working-directory: ./Spell-Checker
         
       - run: cat content.txt
-        working-directory: ./Spell-Checker
+        working-directory: ./cireports
