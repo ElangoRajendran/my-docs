@@ -34,18 +34,7 @@ jobs:
           
       - name: Get changed files
         run: |
-          git diff --name-only HEAD^ HEAD > content.txt
+          git diff --name-only --line-prefix=`git rev-parse --show-toplevel`/ HEAD release
         working-directory: ./Spell-Checker
         
-      - run: cat content.txt
-        working-directory: ./Spell-Checker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
       
-      - run: mkdir cireports
-      
-      - run: ls
-      
-      - run: echo $pwd
-        working-directory: ./Spell-Checker
