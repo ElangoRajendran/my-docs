@@ -34,7 +34,12 @@ jobs:
           
       - name: Get changed files
         run: |
-          git diff --name-only --[line-prefix=`git rev-parse --show-toplevel`/ HEAD release]
+          git-diff-with-abs-path() {
+            local path
+
+              path=$(git rev-parse --show-toplevel) &&
+              git diff --name-only "$@" | sed "s,^,$path/,"
+              }
         working-directory: ./Spell-Checker
         
       
