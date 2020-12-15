@@ -34,7 +34,7 @@ jobs:
           
       - name: Get changed files
         run: |
-          path=git rev-parse --show-toplevel
+          git diff --name-only --line-prefix=D:/Githubproject/sfshared-xaml/
         working-directory: ./Spell-Checker
         
       
