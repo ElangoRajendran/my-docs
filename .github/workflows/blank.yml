@@ -34,12 +34,7 @@ jobs:
           
       - name: Get changed files
         run: |
-          git-diff-with-abs-path() {
-            local path
-
-              path=$(git rev-parse --show-toplevel) &&
-              git diff --name-only "$@" | sed "s,^,$path/,"
-              }
+          git rev-parse --show-toplevel
         working-directory: ./Spell-Checker
         
       
