@@ -44,3 +44,6 @@ jobs:
         
       - run: ls
         working-directory: ./cireports
+      
+      - run: powershell .\build.ps1
+        working-directory: ./ug_spellchecker
