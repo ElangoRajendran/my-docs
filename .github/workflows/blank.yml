@@ -32,23 +32,8 @@ jobs:
           path: Spell-Checker     
         
           
-      - run: echo $pwd
       - run: ls
-      
-      - run: ls
-        working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
-        
-      - run: powershell .\build.ps1
-        working-directory: ./ug_spellchecker
-
-
-      - run: ls
-      
-      - run: ls
-        working-directory: ./ug_spellchecker
-        
-      - run: ls
-        working-directory: ./Spell-Checker
+        working-directory: ./Spell-Checker        
+        env:
+         PR_NUMBER: ${{ github.event.number }}  
+         Repo_Name: ${{ github.event.repository.name }}
