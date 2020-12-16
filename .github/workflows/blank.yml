@@ -38,9 +38,6 @@ jobs:
         run: |
           git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> ../cireports/content.txt
         working-directory: ./Spell-Checker
-        
-      - run: cat content.txt
-        working-directory: ./cireports
       
       - run: powershell .\build.ps1 -Target build -Platform "UWP" -Targetbranch ${{ github.base_ref }} -Branch ${{ github.head_ref }} 
         working-directory: ./ug_spellchecker
@@ -48,5 +45,20 @@ jobs:
       - run: ls
         working-directory: ./cireports
       
-      - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}
+      - run: cat content.txt
+        working-directory: ./cireports
+      
+      - run: cat FilePathValidation.html
+        working-directory: ./cireports/FilePathValidation
+        
+      - run: cat FrontMatterValidation.html
+        working-directory: ./cireports/FrontMatterValidation
+        
+      - run: cat FTStructureValidation.html
+        working-directory: ./cireports/FTLayoutSyntaxValidation
+        
+      - run: ls
+        working-directory: ./cireports/ImageValidation
+        
+      - run: cat spellcheckreport.htm
+        working-directory: ./cireports/spellcheck
