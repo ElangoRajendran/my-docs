@@ -45,5 +45,5 @@ jobs:
       - run: ls
         working-directory: ./cireports
       
-      - run: powershell .\build.ps1
+      - run: powershell .\build.ps1 -Target build -Platform "UWP" -Targetbranch development -Branch "hotfix/hotfix-v18.3.0.47" 
         working-directory: ./ug_spellchecker
