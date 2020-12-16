@@ -41,9 +41,9 @@ jobs:
         
       - run: cat content.txt
         working-directory: ./cireports
-        
-      - run: ls
-        working-directory: ./cireports
       
       - run: powershell .\build.ps1 -Target build -Platform "UWP" -Targetbranch development -Branch "hotfix/hotfix-v18.3.0.47" 
         working-directory: ./ug_spellchecker
+
+      - run: ls
+        working-directory: ./cireports
