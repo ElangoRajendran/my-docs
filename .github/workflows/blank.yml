@@ -47,3 +47,6 @@ jobs:
 
       - run: ls
         working-directory: ./cireports
+      
+      - name: Branch name
+        run: echo running on branch ${GITHUB_REF##*/}
