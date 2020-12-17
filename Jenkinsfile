@@ -8,8 +8,8 @@ String platform='UWP';
 	
 	{   
 	
-	 def Content=""; 
-		env.PATH = "${ProgramFiles}"+"\\Git\\mingw64\\bin;${env.PATH}"
+	 	def Content=""; 
+			env.PATH = "${ProgramFiles}"+"\\Git\\mingw64\\bin;${env.PATH}"
 	
 
 		//Clone scm repository in Workspace source directory
