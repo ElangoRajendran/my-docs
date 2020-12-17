@@ -15,7 +15,7 @@ This section contains guidelines on naming files, sections, documents and other 
 
 > For example, at the top section of each MD file,
 
-> **Title :** Getting started with Chart widget for Syncfusion Essential JS 
+> **Title :**   Getting started with Chart widget for Syncfusion Essential JS 
 
 > **Description :** How to create a chart, add series, enable tooltip and other functionalities.
 
