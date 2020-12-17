@@ -9,7 +9,6 @@ on:
     branches: [ '*' ]
   pull_request:
     branches: [ '*' ]
-    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,7 +16,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-
+  
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,21 +25,19 @@ jobs:
         with: 
           repository: 'ElangoRajendran/my-docs-test'
           ref: 'master'
-          path: ug_spellchecker          
-            
+          path: ug_spellchecker
+                                  
       - uses: actions/checkout@v2
         with:
-          path: Spell-Checker     
+          fetch-depth: 0
+          path: Spell-Checker
+          
+      - run: mkdir cireports
           
       - name: Get changed files
-        run: git diff --name-only 
-        working-directory: ./Spell-Checker 
-         
-      - run: ls
-        working-directory: ./Spell-Checker        
-        env:
-         PR_NUMBER: ${{ github.event.number }}  
-         Repo_Name: ${{ github.event.repository.name }}
-         API_Token: ${{ secrets.MY_API_TOKEN }}
-                
-    
+        run: |
+          git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> ../cireports/content.txt
+        working-directory: ./Spell-Checker
+        
+      - run: cat content.txt
+        working-directory: ./cireports
