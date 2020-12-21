@@ -46,6 +46,9 @@ jobs:
       - run: cat content.txt
         working-directory: ./cireports
       
+      - run: ls
+        working-directory: ./cireports/FilePathValidation
+      
       - run: cat FilePathValidation.html
         working-directory: ./cireports/FilePathValidation
         
