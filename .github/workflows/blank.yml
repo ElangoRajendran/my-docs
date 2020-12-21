@@ -56,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
             name: report
-            path: ./cireports/FilePathValidation/FrontMatterValidation.html
+            path: ./cireports/FilePathValidation/FilePathValidation.html
         
       - run: cat FrontMatterValidation.html
         working-directory: ./cireports/FrontMatterValidation
