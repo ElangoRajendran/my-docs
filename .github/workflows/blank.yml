@@ -49,11 +49,11 @@ jobs:
       - run: cat FilePathValidation.html
         working-directory: ./cireports/FilePathValidation
         
-      - uses: actions/upload-artifact@v1
+      - name: publish cireport FilePathValidation results
+        uses: actions/upload-artifact@v1
         with:
-          working-directory: ./cireports/FilePathValidation
-          name: FrontMatterValidation
-          path: FrontMatterValidation.html
+            name: report
+            path: ./cireports/FilePathValidation/FrontMatterValidation.html
         
       - run: cat FrontMatterValidation.html
         working-directory: ./cireports/FrontMatterValidation
