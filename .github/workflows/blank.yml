@@ -55,8 +55,8 @@ jobs:
       - name: publish cireport FilePathValidation results
         uses: actions/upload-artifact@v1
         with:
-            name: report
-            path: ./cireports/FilePathValidation/FilePathValidation.html
+            name: ArtifactReport
+            path: ./cireports/
         
       - run: cat FrontMatterValidation.html
         working-directory: ./cireports/FrontMatterValidation
