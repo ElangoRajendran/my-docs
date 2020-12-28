@@ -53,7 +53,7 @@ jobs:
         working-directory: ./cireports
 
       - name: Only run this if file README exists
-        run: '(test -f content.txt && echo README exists) || echo README does not exist, skipping step'
+        run: '(test -f myreport.txt && echo README exists) || echo README does not exist, skipping step'
         working-directory: ./cireports
           
 
