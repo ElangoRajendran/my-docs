@@ -42,30 +42,13 @@ jobs:
 
       - run: ls
         working-directory: ./cireports
-      
-      - run: cat content.txt
-        working-directory: ./cireports
-      
-      - run: ls
-        working-directory: ./cireports/FilePathValidation
-      
-      - run: cat FilePathValidation.html
-        working-directory: ./cireports/FilePathValidation
         
       - name: publish cireport FilePathValidation results
         uses: actions/upload-artifact@v1
         with:
             name: ArtifactReport
             path: ./cireports/
-        
-      - run: cat FrontMatterValidation.html
-        working-directory: ./cireports/FrontMatterValidation
-        
-      - run: cat FTStructureValidation.html
-        working-directory: ./cireports/FTLayoutSyntaxValidation
-        
-      - run: ls
-        working-directory: ./cireports/ImageValidation
-        
-      - run: cat spellcheckreport.htm
-        working-directory: ./cireports/spellcheck
+     
+      - run: git ls-files | wc -l
+        working-directory: ./cireports
+      
