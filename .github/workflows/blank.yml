@@ -52,6 +52,8 @@ jobs:
       - run: git ls-files | wc -l
         working-directory: ./cireports
 
-      - run: if [ ${#working-directory[@]} -gt 0 ]; then echo "file exists"; fi
+      - name: File exists or not
+        if: ( ${#working-directory[@]} -gt 0 ); 
+            then echo "file exists"; fi
         working-directory: ./cireports  
 
