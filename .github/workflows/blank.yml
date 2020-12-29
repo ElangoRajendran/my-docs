@@ -53,8 +53,6 @@ jobs:
         working-directory: ./cireports
 
       - name: File exists or not
-        if: ( ${#working-directory[@]} -gt 0 ) 
-        run: | 
-          echo "file exists" 
+        run: if( ${#files[@]} -gt 0 ); then echo "huzzah"; fi 
         working-directory: ./cireports  
 
