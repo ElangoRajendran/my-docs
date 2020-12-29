@@ -50,9 +50,5 @@ jobs:
             path: ./cireports/
      
       - run: git ls-files | wc -l
-        working-directory: ./cireports
-
-      - name: File exists or not
-        run: if( ${#files[@]} -gt 0 ); then echo "huzzah"; fi 
         working-directory: ./cireports  
 
