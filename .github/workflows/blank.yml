@@ -52,8 +52,6 @@ jobs:
       - run: git ls-files | wc -l
         working-directory: ./cireports
 
-      - name: Only run this if file README exists
-        run: '(test -f myreport.txt && echo README exists) || echo README does not exist, skipping step'
-        working-directory: ./cireports
-          
+      - run: if [ ${#working-directory[@]} -gt 0 ]; then echo "file exists"; fi
+        working-directory: ./cireports  
 
