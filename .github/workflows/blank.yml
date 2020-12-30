@@ -32,6 +32,7 @@ jobs:
           
       - run: mkdir cireports
           
+          
       - name: Get changed files
         run: |
           git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> ../cireports/content.txt
