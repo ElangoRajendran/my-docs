@@ -52,3 +52,5 @@ jobs:
       - run: git ls-files | wc -l
         working-directory: ./cireports  
 
+      - run: $ find "$DIR" -maxdepth 1 -mindepth 1 | wc -l
+        working-directory: ./cireports
