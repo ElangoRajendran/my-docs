@@ -1,11 +1,4 @@
----
-layout: post
-title: Localization in UWP Controls | Syncfusion
-description: Learn about localization support in Syncfusion UWP UI controls using .resw files and explains editing default strings of UWP controls.
-platform: uwp
-Control: Localization
-documentation: ug
----
+
 
 # Localization of Syncfusion UWP controls
 

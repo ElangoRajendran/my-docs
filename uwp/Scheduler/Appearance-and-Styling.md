@@ -655,6 +655,6 @@ Hours in time line view can be automatically adjusted by enabling **EnableAutoFo
 {% endhighlight %}
 {% endtabs %}
 
-![](Appearance-and-Styling_images/Appearance-and-Styling_img18.jpeg)
+![Image 18]()
 
-![](Appearance-and-Styling_images/Appearance-and-Styling_img19.jpeg)
+![](Appearance-and-Styling_images/Appearance-and-Styling_img20.jpeg)
