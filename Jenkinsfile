@@ -2,13 +2,13 @@ node('content')
 { 
 timestamps
   {
-     timeout(time: 7200000, unit: 'MILLISECONDS') {
+     timeout(time: 7200000, unit: 'MILLISECONDS') 
+     {
 String platform='UWP';
    try
-	
 	{   
 	
-	 def Content=""; 
+	def Content=""; 
 		env.PATH = "${ProgramFiles}"+"\\Git\\mingw64\\bin;${env.PATH}"
 	
 
@@ -17,9 +17,9 @@ String platform='UWP';
 	    { 
 	    dir('Spell-Checker')  
            {
-		      checkout scm
+		     checkout scm
 			 
-			 def branchCommit = '"' + 'https://gitlab.syncfusion.com/api/v4/projects/' + env.projectId + '/merge_requests/' + env.MergeRequestId + '/changes'
+			def branchCommit = '"' + 'https://gitlab.syncfusion.com/api/v4/projects/' + env.projectId + '/merge_requests/' + env.MergeRequestId + '/changes'
             String branchCommitDetails = bat returnStdout: true, script: 'curl -s --request GET --header PRIVATE-TOKEN:' + env.BuildAutomation_PrivateToken + " " + branchCommit
 
             def ChangeFiles= branchCommitDetails.split('\n')[2];
@@ -41,7 +41,7 @@ String platform='UWP';
 		    }
 			 
 		   //Checkout the ug_spellchecker from development Source
-	  checkout([$class: 'GitSCM', branches: [[name: '*/development']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ug_spellchecker']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: env.gitlabCredentialId, url: 'https://gitlab.syncfusion.com/content/ug_spellchecker.git']]])
+	  checkout([$class: 'GitSCM', branches: [[name: '*/Elango-GitHub-Test']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ug_spellchecker']], submoduleCfg: [], userRemoteConfigs: [[credentialsId: env.gitlabCredentialId, url: 'https://gitlab.syncfusion.com/content/ug_spellchecker.git']]])
 		 
 	  }
 	  
@@ -73,7 +73,24 @@ if(currentBuild.result != 'FAILURE')
     {
 		currentBuild.result = 'FAILURE'
     }
-}	
+}
+
+if(currentBuild.result != 'FAILURE')
+{
+	stage 'GitHub Task'
+    try
+    {
+	    gitlabCommitStatus("GitHub Task")
+	    {
+			bat 'powershell.exe -ExecutionPolicy ByPass -File '+env.WORKSPACE+"/ug_spellchecker/build.ps1 -Script "+env.WORKSPACE+"/ug_spellchecker/build.cake -Target GithubErrorValidation"
+	    }
+    }
+	catch(Exception e) 
+	{
+		currentBuild.result = 'FAILURE'
+	}
+}  
+
 
 	stage 'Delete Workspace'
 	
@@ -83,6 +100,7 @@ if(currentBuild.result != 'FAILURE')
     { 		
          archiveArtifacts artifacts: 'cireports/', excludes: null 	 
     }
-	    step([$class: 'WsCleanup'])	}
+	    step([$class: 'WsCleanup'])	
+	    }
 	    }
 }
