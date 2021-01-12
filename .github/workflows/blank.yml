@@ -36,7 +36,7 @@ jobs:
           git diff --name-only HEAD^ HEAD --line-prefix=$pwd\ >> ../cireports/content.txt
         working-directory: ./Spell-Checker
       
-      - run: powershell .\build.ps1 -Target build -Platform "UWP" -Targetbranch ${{ github.base_ref }} -Branch ${{ github.head_ref }} 
+      - run: powershell .\build.ps1 -Target build -Platform "UWP" -Branch ${{ github.head_ref }} 
         working-directory: ./ug_spellchecker
 
       - run: ls
