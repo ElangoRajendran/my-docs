@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ CI-Job-Multiple-Workflow ]
 
 jobs:
   build:
@@ -39,9 +39,3 @@ jobs:
       run: |
           git diff --name-only HEAD^ HEAD
         
-    - name: Publish
-      run: npm run publish
-      env:
-         GIT_USER: ${{ secrets.WEB_GITLAB_USER }}
-         GIT_TOKEN: ${{ secrets.WEB_GITLAB_TOKEN }}
-         GIT_MAIL: ${{ secrets.USER_MAIL }}
