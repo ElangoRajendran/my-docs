@@ -34,8 +34,4 @@ jobs:
     
     - name: Install
       run: npm i
-    
-    - name: Get changed files
-      run: |
-          git diff --name-only HEAD^ HEAD
         
