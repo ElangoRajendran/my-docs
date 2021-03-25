@@ -46,5 +46,8 @@ jobs:
             name: Build Artifacts
             path: ./cireports/
             
+      - run: powershell .\build.ps1 -Target PostComments
+        working-directory: ./ug_spellchecker
+            
       - run: powershell .\build.ps1 -Target GitHubCIReportValidation
         working-directory: ./ug_spellchecker
