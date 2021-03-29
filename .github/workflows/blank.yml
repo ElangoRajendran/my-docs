@@ -45,7 +45,12 @@ jobs:
    #     with:
    #         name: Build Artifacts
    #         path: ./cireports/  
-            
+      
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: -X POST -d "{ \"body\":\"My Review comments updated-Latest\" }" "https://api.github.com/repos/ElangoRajendran/my-docs/issues/12/comments"
+      
       - run: powershell .\build.ps1 -Target PostComments
         working-directory: ./ug_spellchecker
             
