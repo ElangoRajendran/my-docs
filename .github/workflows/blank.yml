@@ -47,7 +47,7 @@ jobs:
    #         path: ./cireports/
    
    
-      - run: powershell .\build.ps1 -Target PostComments -mytoken ${{ secrets.Post-Comment-Token-1 }}
+      - run: powershell .\build.ps1 -Target PostComments -Mytoken ${{ secrets.Post-Comment-Token-1 }}
         working-directory: ./ug_spellchecker
             
    #   - run: powershell .\build.ps1 -Target GitHubCIReportValidation
