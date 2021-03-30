@@ -47,7 +47,7 @@ jobs:
    #         path: ./cireports/
    
    
-      - run: powershell .\build.ps1 -Target PostComments 
+      - run: powershell .\build.ps1 -Target PostComments -Mytoken cd4762483e390bf35ff641517c8d38570564f592
         working-directory: ./ug_spellchecker
             
    #   - run: powershell .\build.ps1 -Target GitHubCIReportValidation
