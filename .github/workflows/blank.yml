@@ -44,9 +44,10 @@ jobs:
    #     uses: actions/upload-artifact@v1
    #     with:
    #         name: Build Artifacts
-   #         path: ./cireports/  
+   #         path: ./cireports/
    
-      - run: powershell .\build.ps1 -Target PostComments -MyToken ${{ secrets.Post-Comment-Token-1 }}
+   
+      - run: powershell .\build.ps1 -Target PostComments -mytoken ${{ secrets.Post-Comment-Token-1 }}
         working-directory: ./ug_spellchecker
             
    #   - run: powershell .\build.ps1 -Target GitHubCIReportValidation
