@@ -46,7 +46,7 @@ jobs:
             name: Build Artifacts
             path: ./cireports/
             
-      - run: powershell .\build.ps1 -Target PostComments -Mytoken ${{ secrets.MY_COMMENT_TOKEN }} -RepoName ${{ github.event.repository.name }} -PR_Number ${{ github.event.number }}
+      - run: powershell .\build.ps1 -Target PostComments -Mytoken ${{ secrets.MY_COMMENT_TOKEN }} -RepoName ${{ github.event.repository.name }} -PRnumber ${{ github.event.number }}
         working-directory: ./ug_spellchecker
             
       - run: powershell .\build.ps1 -Target GitHubCIReportValidation
