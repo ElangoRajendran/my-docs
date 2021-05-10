@@ -20,7 +20,7 @@ String platform='UWP';
            {
 		      checkout scm
 			 
-			 def branchCommit = '"' + 'https://gitlab.syncfusion.com/api/v4/projects/' + env.projectId + '/merge_requests/' + env.MergeRequestId + '/changes'
+	    def branchCommit = '"' + 'https://gitlab.syncfusion.com/api/v4/projects/' + env.projectId + '/merge_requests/' + env.MergeRequestId + '/changes'
             String branchCommitDetails = bat returnStdout: true, script: 'curl -s --request GET --header PRIVATE-TOKEN:' + env.BuildAutomation_PrivateToken + " " + branchCommit
 
             def ChangeFiles= branchCommitDetails.split('\n')[2];
