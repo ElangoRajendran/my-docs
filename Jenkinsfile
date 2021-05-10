@@ -2,7 +2,8 @@ node('content')
 { 
 timestamps
   {
-     timeout(time: 7200000, unit: 'MILLISECONDS') {
+     timeout(time: 7200000, unit: 'MILLISECONDS') 
+	  {
 String platform='UWP';
    try
 	
