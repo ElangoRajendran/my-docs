@@ -17,7 +17,7 @@ String platform='UWP';
 	    { 
 	    dir('Spell-Checker')  
            {
-		      checkout scm
+		    checkout scm
 			 
 	     def branchCommit = '"' + 'https://gitlab.syncfusion.com/api/v4/projects/' + env.projectId + '/merge_requests/' + env.MergeRequestId + '/changes'
             String branchCommitDetails = bat returnStdout: true, script: 'curl -s --request GET --header PRIVATE-TOKEN:' + env.BuildAutomation_PrivateToken + " " + branchCommit
