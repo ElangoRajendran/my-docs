@@ -61,7 +61,7 @@ jobs:
             const jobs = await github.actions.listJobsForWorkflowRun({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              id: ${{ github.run_id }},
+              run_id: ${{ github.run_id }},
             });
             console.log(jobs[jobs.length-1].id); // not fail-safe
           result-encoding: string
