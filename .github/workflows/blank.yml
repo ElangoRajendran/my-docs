@@ -55,6 +55,7 @@ jobs:
         
       
       - uses: actions/github-script@v4
+        id: query-jobs
         with:
           script: |
             const jobs = await github.actions.listJobsForWorkflowRun({
