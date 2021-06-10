@@ -53,9 +53,8 @@ jobs:
       - run: powershell .\build.ps1 -Target GitHubCIReportValidation
         working-directory: ./ug_spellchecker
         
-      - name: Get Check Run Id
-        uses: actions/github-script@v4
-        id: query-jobs
+      
+      - uses: actions/github-script@v4
         with:
           script: |
             const jobs = await github.rest.actions.listJobsForWorkflowRun({
