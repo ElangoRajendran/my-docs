@@ -7,8 +7,8 @@ This section contains guidelines on naming files, sections, documents and other 
 ## File naming Convention:
 
 * All files should have `.md` extension.
-* Do not use any special characters except hyphen in folder/file names 
-* Separate words in file names should be hyphenated
+* Do not use any special characters except hyphen in folder/file names.
+* Separate words in file names should be hyphenated.
 * File names of the documents should have one or two-word names that describe the material covered in the document. 
 * Phrase title and description in a way that users can determine what questions the text will answer, and material that will be addressed, without reading the content. This eases the time spent looking for answers, and improvises search/scanning, and possibly **SEO**.
 * Provide titles and headers in the form of “Using foo” over “How to Foo.”
